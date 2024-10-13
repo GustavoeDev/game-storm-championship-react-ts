@@ -1,10 +1,13 @@
 import styled from "styled-components";
 
 export const HeaderContainer = styled.header`
+  max-width: 90rem;
+  margin: 0 auto;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.563rem 0;
+  padding: 1.563rem 3rem;
   position: relative;
 `;
 

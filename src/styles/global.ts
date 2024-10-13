@@ -19,6 +19,12 @@ export const GlobalStyle = createGlobalStyle`
     outline: 0;
 }
 
+section{
+  max-width: 70rem;
+  margin: 0 auto;
+  padding: 0 3rem;
+}
+
 html,
 body {
     overflow-x: hidden;
@@ -42,6 +48,14 @@ h2,
 h3,
 button {
   font-family: "Redwing", sans-serif;
+}
+
+.colorStyle {
+  color: ${(props) => props.theme["purple-100"]};
+}
+
+.fontStyle {
+  font-size: 1.1rem;
 }
 
 @media screen and (max-width: 1100px) {

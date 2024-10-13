@@ -36,10 +36,10 @@ export function Header() {
 
       <Navigation>
         <a href="#">Início</a>
-        <a href="#container-about-event">Sobre</a>
-        <a href="#container-details">Detalhes</a>
-        <a href="#container-offers">O que oferecemos?</a>
-        <a href="#container-form">Inscrição</a>
+        <a href="#">Sobre</a>
+        <a href="#">Detalhes</a>
+        <a href="#">O que oferecemos?</a>
+        <a href="#">Inscrição</a>
       </Navigation>
 
       <NavIcon onClick={toggleMenu}>

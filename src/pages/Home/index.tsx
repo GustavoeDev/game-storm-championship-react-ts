@@ -1,11 +1,17 @@
 import { Header } from "./components/Header";
-import { HomeContainer } from "./styles";
+import videoSource from "./assets/background.mp4";
+import { IntroductionContainer } from "./styles";
+import { Introduction } from "./components/Introduction";
 
 export function Home() {
   return (
-    <HomeContainer>
+    <IntroductionContainer>
+      <video autoPlay muted loop>
+        <source src={videoSource} type="video/mp4" />
+      </video>
       <Header />
-      <h1>Home</h1>
-    </HomeContainer>
+      <Introduction />
+      <div className="blur"></div>
+    </IntroductionContainer>
   );
 }
