@@ -3,6 +3,7 @@ import videoSource from "./assets/background.mp4";
 import { IntroductionContainer } from "./styles";
 import { Introduction } from "./components/Introduction";
 import { AboutEvent } from "./components/AboutEvent";
+import { Details } from "./components/Details";
 
 export function Home() {
   return (
@@ -16,6 +17,7 @@ export function Home() {
         <div className="blur"></div>
       </IntroductionContainer>
       <AboutEvent />
+      <Details />
     </>
   );
 }

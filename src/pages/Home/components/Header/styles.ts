@@ -14,9 +14,15 @@ export const HeaderContainer = styled.header`
 export const NavIcon = styled.div`
   cursor: pointer;
   z-index: 10000;
-  position: fixed;
+  position: absolute;
   top: 2.5rem;
   right: 2.5rem;
+
+  .position {
+    position: fixed;
+    top: 2.5rem;
+    right: 2.5rem;
+  }
 
   svg {
     color: ${(props) => props.theme["white"]};

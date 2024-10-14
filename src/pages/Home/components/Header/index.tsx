@@ -43,7 +43,7 @@ export function Header() {
       </Navigation>
 
       <NavIcon onClick={toggleMenu}>
-        {isMenuOpen ? <X size={36} /> : <List size={36} />}
+        {isMenuOpen ? <X size={36} className="position" /> : <List size={36} />}
       </NavIcon>
 
       <NavMenu className={isMenuOpen ? "active" : ""}>
