@@ -4,6 +4,7 @@ import { IntroductionContainer } from "./styles";
 import { Introduction } from "./components/Introduction";
 import { AboutEvent } from "./components/AboutEvent";
 import { Details } from "./components/Details";
+import { Offers } from "./components/Offers";
 
 export function Home() {
   return (
@@ -18,6 +19,7 @@ export function Home() {
       </IntroductionContainer>
       <AboutEvent />
       <Details />
+      <Offers />
     </>
   );
 }

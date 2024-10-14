@@ -6,6 +6,11 @@ export const DetailsContainer = styled.section`
   gap: 6.25rem;
 
   padding-top: 9.375rem;
+
+  @media screen and (max-width: 1100px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 export const DetailsContentText = styled.div`
@@ -17,6 +22,7 @@ export const DetailsContentText = styled.div`
 
   & > h1 {
     font-size: 3rem;
+    text-align: left;
     margin-bottom: 0.625rem;
   }
 
@@ -28,6 +34,7 @@ export const DetailsContentText = styled.div`
 
 export const DetailsIcons = styled.div`
   margin: 1.875rem 0;
+  width: 100%;
 
   display: flex;
   align-items: center;
@@ -42,10 +49,15 @@ export const DetailsIcons = styled.div`
     font-weight: bold;
     font-family: "Redwing", sans-serif;
   }
+
+  @media screen and (max-width: 768px) {
+    & > div {
+      font-size: 1.2rem;
+    }
+  }
 `;
 
 export const DetailsCarousel = styled.div`
-  width: 100%;
   margin-bottom: 0.938rem;
   white-space: nowrap;
   overflow: hidden;

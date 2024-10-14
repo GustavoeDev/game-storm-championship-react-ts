@@ -25,12 +25,14 @@ export function Card({ game }: CardProps) {
       }}
     >
       <img src={game.logo} />
-      {game.paragraph.map((item, index) => (
-        <p key={index}>
-          <span style={{ color: `${game.color}` }}>{item.title}</span>{" "}
-          {item.content}
-        </p>
-      ))}
+      <div>
+        {game.paragraph.map((item, index) => (
+          <p key={index}>
+            <span style={{ color: `${game.color}` }}>{item.title}</span>{" "}
+            {item.content}
+          </p>
+        ))}
+      </div>
     </CardContainer>
   );
 }
