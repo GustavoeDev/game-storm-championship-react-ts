@@ -58,10 +58,10 @@ export function Details() {
         </DetailsIcons>
         <DetailsCarousel>
           <div>
-            {games.concat(games).map((game) => {
+            {games.concat(games).map((game, index) => {
               return (
                 <img
-                  key={game.id}
+                  key={`${game.id}-${index}`}
                   src={game.img}
                   onClick={() => handleChangeImage(game)}
                 />
