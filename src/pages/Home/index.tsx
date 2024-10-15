@@ -5,6 +5,8 @@ import { Introduction } from "./components/Introduction";
 import { AboutEvent } from "./components/AboutEvent";
 import { Details } from "./components/Details";
 import { Offers } from "./components/Offers";
+import { Form } from "./components/Form";
+import { Footer } from "./components/Footer";
 
 export function Home() {
   return (
@@ -20,6 +22,8 @@ export function Home() {
       <AboutEvent />
       <Details />
       <Offers />
+      <Form />
+      <Footer />
     </>
   );
 }
