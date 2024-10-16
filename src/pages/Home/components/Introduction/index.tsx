@@ -17,7 +17,7 @@ export function Introduction() {
           funcionários, estudantes, amigos, equipes – não importando idade,
           localização ou nível gamer.
         </span>
-        <a href="#">
+        <a href="#registration">
           <button>Inscreva-se</button>
         </a>
       </IntroductionText>

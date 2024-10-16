@@ -31,7 +31,7 @@ export function Details() {
   }
 
   return (
-    <DetailsContainer>
+    <DetailsContainer id="details">
       <DetailsContentText>
         <h1>
           <span className="colorStyle">DETALHES</span> DOS JOGOS

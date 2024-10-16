@@ -66,7 +66,7 @@ export function Form() {
   }
 
   return (
-    <FormContainer>
+    <FormContainer id="registration">
       <FormHeader>
         <h2>
           ENVIAR <span className="colorStyle">INSCRIÇÃO</span>

@@ -61,6 +61,10 @@ export const FormInput = styled.input<{ $hasError: boolean }>`
       border: 1px solid red;
     }
   }
+
+  @media screen and (max-width: 768px) {
+    font-size: 80%;
+  }
 `;
 
 export const FormSelectGame = styled.div`

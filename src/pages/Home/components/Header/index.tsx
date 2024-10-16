@@ -12,15 +12,19 @@ import logo from "./assets/logo.png";
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const toggleMenu = () => {
+  function toggleMenu() {
     setIsMenuOpen(!isMenuOpen);
-  };
+  }
 
-  const handleResize = () => {
+  function closeMenu() {
+    setIsMenuOpen(false);
+  }
+
+  function handleResize() {
     if (window.innerWidth > 900) {
       setIsMenuOpen(false);
     }
-  };
+  }
 
   useEffect(() => {
     window.addEventListener("resize", handleResize);
@@ -36,10 +40,10 @@ export function Header() {
 
       <Navigation>
         <a href="#">Início</a>
-        <a href="#">Sobre</a>
-        <a href="#">Detalhes</a>
-        <a href="#">O que oferecemos?</a>
-        <a href="#">Inscrição</a>
+        <a href="#about">Sobre</a>
+        <a href="#details">Detalhes</a>
+        <a href="#offers">O que oferecemos?</a>
+        <a href="#registration">Inscrição</a>
       </Navigation>
 
       <NavIcon onClick={toggleMenu}>
@@ -49,19 +53,29 @@ export function Header() {
       <NavMenu className={isMenuOpen ? "active" : ""}>
         <NavList className={isMenuOpen ? "active" : ""}>
           <li>
-            <a href="#">Início</a>
+            <a href="#" onClick={closeMenu}>
+              Início
+            </a>
           </li>
           <li>
-            <a href="#container-about-event">Sobre</a>
+            <a href="#about" onClick={closeMenu}>
+              Sobre
+            </a>
           </li>
           <li>
-            <a href="#container-details">Detalhes</a>
+            <a href="#details" onClick={closeMenu}>
+              Detalhes
+            </a>
           </li>
           <li>
-            <a href="#container-offers">O que oferecemos?</a>
+            <a href="#offers" onClick={closeMenu}>
+              O que oferecemos?
+            </a>
           </li>
           <li>
-            <a href="#container-form">Inscrição</a>
+            <a href="#registration" onClick={closeMenu}>
+              Inscrição
+            </a>
           </li>
         </NavList>
       </NavMenu>

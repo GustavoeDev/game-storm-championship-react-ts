@@ -7,7 +7,7 @@ import {
 
 export function Offers() {
   return (
-    <OffersContainer>
+    <OffersContainer id="offers">
       <OffersHeader>
         <h2>
           O QUE PODEMOS <span className="colorStyle">OFERECER?</span>

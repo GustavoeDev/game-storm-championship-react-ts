@@ -10,7 +10,7 @@ import imgOwner from "./assets/img-owner.png";
 
 export function AboutEvent() {
   return (
-    <AboutEventContainer>
+    <AboutEventContainer id="about">
       <AboutEventHeader>
         <h2>
           SOBRE O <span className="colorStyle">EVENTO</span>
