@@ -9,8 +9,12 @@ import {
 
 import manRegistration from "./assets/man-registration.png";
 import { useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import { FormDataContext } from "../../contexts/FormData";
 
 export function Success() {
+  const { dataRegistration } = useContext(FormDataContext);
+
   const navigate = useNavigate();
 
   function handleChangePage() {
@@ -37,10 +41,11 @@ export function Success() {
               </span>
               <div>
                 <p>
-                  Olá, <strong>'Nome'</strong>, seja bem-vindo à tempestade!
+                  Olá, <strong>{dataRegistration?.name}</strong>, seja bem-vindo
+                  à tempestade!
                 </p>
                 <p>
-                  Nickname: <strong>'Usuário'</strong>
+                  Nickname: <strong>{dataRegistration?.user}</strong>
                 </p>
               </div>
             </div>
@@ -52,7 +57,7 @@ export function Success() {
               <div>
                 <p>Jogo selecionado</p>
                 <p>
-                  <strong>'Jogo'</strong>
+                  <strong>{dataRegistration?.game}</strong>
                 </p>
               </div>
             </div>

@@ -14,8 +14,8 @@ import {
 
 import { games } from "../../../../Games/games";
 import { Envelope, InstagramLogo, WhatsappLogo } from "phosphor-react";
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useContext, useState } from "react";
+import { FormDataContext } from "../../../../contexts/FormData";
 
 const newFormEventValidationSchema = zod.object({
   name: zod.string().min(2).max(50),
@@ -38,10 +38,8 @@ export interface RegistrationData {
 
 export function Form() {
   const [errorAnimation, setErrorAnimation] = useState(false);
-  const [dataRegistration, setDataRegistration] =
-    useState<RegistrationData | null>(null);
 
-  console.log(dataRegistration);
+  const { createRegistrationData } = useContext(FormDataContext);
 
   const {
     register,
@@ -58,11 +56,8 @@ export function Form() {
     },
   });
 
-  const navigate = useNavigate();
-
   function handleRegistrationEvent(data: RegistrationData) {
-    setDataRegistration(data);
-    navigate("/success");
+    createRegistrationData(data);
   }
 
   function handleError() {
