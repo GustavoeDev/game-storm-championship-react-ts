@@ -34,7 +34,7 @@ export const Inputs = styled.div`
   gap: 0.625rem;
 `;
 
-export const FormInput = styled.input<{ $hasError: boolean }>`
+export const FormInput = styled.input`
   width: 100%;
   border: 0;
   padding: 0.75rem;
@@ -42,25 +42,7 @@ export const FormInput = styled.input<{ $hasError: boolean }>`
   border: 1px solid ${(props) => props.theme["purple-100"]};
   color: ${(props) => props.theme["white"]};
   border-radius: 8px;
-
-  animation: ${(props) => (props.$hasError ? "shake 0.5s ease" : "none")};
-
-  @keyframes shake {
-    0%,
-    100% {
-      transform: translateX(0);
-      border: 1px solid ${(props) => props.theme["purple-100"]};
-    }
-    25%,
-    75% {
-      transform: translateX(-5px);
-      border: 1px solid red;
-    }
-    50% {
-      transform: translateX(5px);
-      border: 1px solid red;
-    }
-  }
+  font-size: 0.875rem;
 
   @media screen and (max-width: 768px) {
     font-size: 80%;

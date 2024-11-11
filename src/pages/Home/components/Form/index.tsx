@@ -14,17 +14,14 @@ import {
 
 import { games } from "../../../../Games/games";
 import { Envelope, InstagramLogo, WhatsappLogo } from "phosphor-react";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { FormDataContext } from "../../../../contexts/FormData";
 
 const newFormEventValidationSchema = zod.object({
   name: zod.string().min(2).max(50),
-  email: zod.string().email("O e-mail fornecido é inválido"),
+  email: zod.string().regex(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/),
   user: zod.string().min(2).max(20),
-  password: zod
-    .string()
-    .min(5, "A senha deve ter no mínimo 8 caracteres")
-    .max(20, "A senha deve ter no máximo 20 caracteres"),
+  password: zod.string().min(2).max(40),
   game: zod.string(),
 });
 
@@ -37,15 +34,9 @@ export interface RegistrationData {
 }
 
 export function Form() {
-  const [errorAnimation, setErrorAnimation] = useState(false);
-
   const { createRegistrationData } = useContext(FormDataContext);
 
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm<RegistrationData>({
+  const { register, handleSubmit } = useForm<RegistrationData>({
     resolver: zodResolver(newFormEventValidationSchema),
     defaultValues: {
       name: "",
@@ -60,11 +51,6 @@ export function Form() {
     createRegistrationData(data);
   }
 
-  function handleError() {
-    setErrorAnimation(true);
-    setTimeout(() => setErrorAnimation(false), 500);
-  }
-
   return (
     <FormContainer id="registration">
       <FormHeader>
@@ -77,31 +63,23 @@ export function Form() {
         </span>
       </FormHeader>
 
-      <form onSubmit={handleSubmit(handleRegistrationEvent, handleError)}>
+      <form onSubmit={handleSubmit(handleRegistrationEvent)}>
         <Inputs>
           <FormInput
-            placeholder="Nome"
+            placeholder="Gustavo Emanuel"
             {...register("name")}
-            $hasError={errorAnimation && !!errors.name}
             required
           />
           <FormInput
-            placeholder="E-mail"
+            placeholder="exemplo@game.com"
             {...register("email")}
-            $hasError={errorAnimation && !!errors.email}
             required
           />
-          <FormInput
-            placeholder="Usuário"
-            {...register("user")}
-            $hasError={errorAnimation && !!errors.user}
-            required
-          />
+          <FormInput placeholder="gustavox8_" {...register("user")} required />
           <FormInput
             type="password"
-            placeholder="Senha"
+            placeholder="insira sua senha"
             {...register("password")}
-            $hasError={errorAnimation && !!errors.password}
             required
           />
         </Inputs>
