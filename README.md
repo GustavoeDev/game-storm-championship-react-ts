@@ -1,50 +1,34 @@
-# React + TypeScript + Vite
+# 🎮 Game Storm Championship
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A Game Storm Championship é um sistema web responsável pelo controle das inscrições de um campeonato de jogos eletrônicos, desenvolvido em ReactJS + TypeScript. Ele proporciona uma interface agradável e intuitiva para o usuário.
 
-Currently, two official plugins are available:
+<img src="./src/pages/Home/assets/game-storm.png" width="100%"/>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Funcionalidades
 
-## Expanding the ESLint configuration
+- **Regras dos Jogos**: Após selecionar um jogo, o usuário poderá verificar quais são as regras daquele jogo para o campeonato.
+- **Enviar Inscrição**: Com um formulário validado, o usuário conseguirá se inscrever no campeonato.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## 📝 Bibliotecas
 
-- Configure the top-level `parserOptions` property like this:
+- **Styled-Components**: Usado para estilização de componentes.
+- **Phosphor-React**: Responsável pelos ícones do sistema.
+- **React-Hook-Form e Zod**: Usados para validação dos formulários de cadastro.
+- **React-Router-Dom**: Responsável pelas rotas do sistema.
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## 🖥️ Como rodar o projeto
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+Faça clone do projeto.
+```tsx
+git clone https://github.com/GustavoeDev/game-storm-championship-react-ts.git
+````
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+Baixe as dependências
+```tsx
+npm install
+````
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+Inicialize o projeto
+```tsx
+npm run dev
+````
